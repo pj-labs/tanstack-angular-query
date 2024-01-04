@@ -7,10 +7,10 @@ import { BASE_API_URL } from '../constants/ApiConstants';
   providedIn: 'root',
 })
 export class EmployeeService {
-  private httpClient = inject(HttpClient);
+  httpClient = inject(HttpClient);
 
   getEmployees(): Promise<Employee[]> {
-    console.log('getEmployees');
+    console.log('EmployeeService getEmployees');
     return lastValueFrom(
       this.httpClient.get<Employee[]>(`${BASE_API_URL}/employees`),
     )
