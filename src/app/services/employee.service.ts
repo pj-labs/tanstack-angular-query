@@ -10,6 +10,7 @@ export class EmployeeService {
   private httpClient = inject(HttpClient);
 
   getEmployees(): Promise<Employee[]> {
+    console.log('getEmployees');
     return lastValueFrom(
       this.httpClient.get<Employee[]>(`${BASE_API_URL}/employees`),
     )
